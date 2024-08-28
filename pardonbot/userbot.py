@@ -1,11 +1,9 @@
 """
-Модуль для взаимодействия с Telegram через бот-аккаунты, обеспечивающий
-автоматическое отправление сообщений, проверку состояния аккаунта и управление
-диалогами.
+A module for interacting with Telegram through bot accounts, which provides
+automatic sending of messages, checking account status and managing dialogues.
 
-Модуль содержит класс UserBot, который инкапсулирует логику работы с клиентом
-Telegram, а также функции для обработки аккаунтов и основного потока
-выполнения.
+The module contains the Usbot class, which encapsulates the logic of working with
+the Telegram client, as well as functions for processing accounts.
 """
 import asyncio
 import logging
