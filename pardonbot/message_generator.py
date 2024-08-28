@@ -135,7 +135,7 @@ async def generate_message_with_proxy(
     prompt: str, initial_message: str, proxy: dict[str, str | int],
 ) -> str:
     """
-    Генерирует сообщение похожее на initial_message на основе предоставленного
+    Сгенеррируй сообщение похожее на initial_message на основе предоставленного
     запроса.
 
     Args:
@@ -199,37 +199,3 @@ async def generate_message_with_proxy(
     if response is None:
         response = await random_message(initial_message)
     return response
-
-
-# async def generate_message(prompt: str, initial_message: str) -> str:
-#    """
-#    Генерирует сообщение похожее на initial_message на основе предоставленного
-#    запроса.
-#
-#    Args:
-#        prompt (str): Запрос для генерации сообщения.
-#
-#    Returns:
-#        str: Сгенерированное сообщение.
-#    """
-#    response = None
-#    try:
-#        chat_completion = await openai_async_client.chat.completions.create(
-#            messages=[
-#                {
-#                    "role": "user",
-#                    "content": prompt,
-#                }
-#            ],
-#            model="gpt-3.5-turbo",
-#        )
-#        response = chat_completion.choices[0].message.content
-#        await add_message_to_json(response)
-#        logger.debug("Сообщение сгенерировано")
-#    except RateLimitError as e:
-#        logger.error(f"Rate limit error: {e}")
-#    except Exception as e:
-#        logger.error(f"An error occurred: {e}")
-#    if response is None:
-#        response = await random_message(initial_message)
-#    return response
