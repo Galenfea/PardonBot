@@ -306,11 +306,6 @@ class UserBot:
 
             # Фильтрация сообщений, отправленных ботом
             if reply_message.sender_id != self.me.id:
-                # logger.debug(
-                #     f"{self.account} | "
-                #     f"{self.interlocutors_name} {reply_message.sender_id}: "
-                #     f"{reply_message.text}"
-                # )
                 # Проверка обычных клавиатурных кнопок
                 keyboard_buttons_texts = await self.get_keyboard_buttons(
                     reply_message
@@ -447,10 +442,6 @@ class UserBot:
         else:
             # Генерируем и добавляем дополнительное сообщение с помощью ИИ
             last_message = await self.generate_background_message()
-            # TODO Отправлять сообщение _send_message_to_not_blocked_agent() и
-            # принимать ответ отдельно, при этом добавив в
-            # _get_response_from_interlocutor() временной токен отмены для
-            # предотвращения зависания в цикле.
             answer, answer_buttons = (
                 await self.send_message_and_wait_for_response(
                     last_message
