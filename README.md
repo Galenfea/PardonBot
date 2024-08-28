@@ -1,2 +1,2 @@
 # PardonBot
-Бот управляет аккаунтами, которые связываются с телеграм ботом и сообщают, что они не подходят под ограничения
+The bot manages accounts that contact the telegram bot and report that restrictions have been imposed on them.
